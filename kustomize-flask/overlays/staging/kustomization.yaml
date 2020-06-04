@@ -6,7 +6,7 @@ patchesStrategicMerge:
 namePrefix: staging-
 images:
 - name: peerapach/argo-workflow
-  newTag: "01e65"
+  newTag: "01e6529"
 patchesJson6902:
 - target:
     version: v1
