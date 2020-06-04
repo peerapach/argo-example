@@ -1,5 +1,6 @@
 # EXAMPLE
 
+## ArgoCD
 ### Install ArgoCD
 ```
 kubectl create namespace argocd
@@ -10,6 +11,8 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 ```
 kubectl apply -f argocd/flask-example.yaml
 ```
+
+## Argo Workflow
 
 ### Install Argo
 ```
