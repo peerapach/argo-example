@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-user
+spec:
+  template:
+    spec:
+      containers:
+        - name: app-user
+          resources:
+            limits:
+              memory: 1250Mi
+            requests:
+              memory: 1250Mi
+          env:
+          - name: MEM_TOTAL_MB
+            valueFrom:
+              resourceFieldRef:
+                resource: limits.memory

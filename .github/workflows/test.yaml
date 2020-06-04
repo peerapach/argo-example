@@ -1,0 +1,41 @@
+on: [push, pull_request]
+name: test
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Validate kustomization
+        uses: stefanprodan/kube-tools@v1
+        with:
+          kubectl: 1.14.7
+          kustomize: 3.4.0
+          helm: 2.14.3
+          command: |
+            echo "Validating production"
+            kustomize build kustomize-flask/overlays/production | kubeval --strict --ignore-missing-schemas
+            echo "Validating staging"
+            kustomize build kustomize-flask/overlays/staging | kubeval --strict --ignore-missing-schemas
+      - name: Policy check
+        uses: stefanprodan/kube-tools@v1
+        id: policy_check
+        with:
+          command: |
+            echo "Policy check for production"
+            kustomize build kustomize-flask/overlays/production | conftest test -p .github/policy -
+            echo "Policy check for deployment for workflow"
+            kustomize build kustomize-flask/overlays/staging | conftest test -p .github/policy -
+      - name: Comment
+        uses: actions/github-script@v1
+        if: github.event_name == 'pull_request'
+        env:
+          STDOUT: "```${{ steps.policy_check.outputs.stdout }}```"
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: process.env.STDOUT
+            })
