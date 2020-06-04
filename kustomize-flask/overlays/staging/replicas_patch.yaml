@@ -3,4 +3,4 @@ kind: Deployment
 metadata:
   name: app-user
 spec:
-  replica: 2
+  replicas: 2
