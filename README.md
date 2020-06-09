@@ -9,7 +9,8 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 ### Create example applications 
 ```
-kubectl apply -f argocd/flask-example.yaml
+kubectl apply -f argocd/flask-example-staging.yaml
+kubectl apply -f argocd/flask-example-prod.yaml
 ```
 
 ## Argo Workflow

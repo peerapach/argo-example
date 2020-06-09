@@ -11,8 +11,8 @@ patchesJson6902:
 - target:
     version: v1
     kind: Namespace
-    name: example
+    name: example-staging
   path: namespace_patch.yaml  
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: example
+namespace: example-staging
