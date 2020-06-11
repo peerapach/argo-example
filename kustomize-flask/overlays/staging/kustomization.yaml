@@ -5,7 +5,7 @@ patchesStrategicMerge:
 - replicas_patch.yaml
 namePrefix: staging-
 images:
-- name: peerapach/argo-workflow
+- name: peerapach/demo-workshop
   newTag: "01e6529"
 patchesJson6902:
 - target:
