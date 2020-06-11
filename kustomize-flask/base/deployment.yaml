@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app-user
-        image: peerapach/argo-workflow:v1
+        image: peerapach/demo-workshop:v1
         ports:
         - containerPort: 5000
         resources:
