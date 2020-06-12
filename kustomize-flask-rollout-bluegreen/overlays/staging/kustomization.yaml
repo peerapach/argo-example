@@ -1,10 +1,13 @@
+configurations:
+- rollout-transform.yaml
+
 resources:
 - ../../base
 - namespace.yaml
 patchesStrategicMerge:
 - replicas_patch.yaml
-- rollout_patch.yaml
-#namePrefix: staging-
+namePrefix: staging-
+
 images:
 - name: peerapach/demo-workshop
   newTag: "2"
@@ -23,4 +26,4 @@ patchesJson6902:
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: example-staging
+#namespace: example-staging

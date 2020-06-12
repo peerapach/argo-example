@@ -1,0 +1,10 @@
+nameReference:
+- kind: Service
+  version: v1
+  fieldSpecs:
+  - path: spec/rules/http/paths/backend/serviceName
+    kind: Ingress
+  - path: spec/strategy/blueGreen/activeService
+    kind: Rollout    
+  - path: spec/strategy/blueGreen/previewService
+    kind: Rollout       

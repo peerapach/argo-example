@@ -38,3 +38,8 @@ spec:
             port: 5000
           initialDelaySeconds: 10
           periodSeconds: 30 
+  strategy:
+    blueGreen: 
+      activeService: app-service-active
+      previewService: app-service-preview
+      autoPromotionEnabled: false

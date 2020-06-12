@@ -4,15 +4,11 @@ metadata:
   name: app-user-ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"  
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      if ( $http_test ) {
-      set $proxy_upstream_name "#USER#-app-user-preview-80";
-      }  
 spec:
   rules:
   - host: app-user.workshop.ezylinux.com
     http:
       paths:
       - backend:
-          serviceName: app-user-active
+          serviceName: app-service-active
           servicePort: 80      
