@@ -3,8 +3,6 @@ kind: Rollout
 metadata:
   name: app-user
 spec:
-  minReadySeconds: 30
-  revisionHistoryLimit: 3
   strategy:
     blueGreen: 
       activeService: app-service-active
