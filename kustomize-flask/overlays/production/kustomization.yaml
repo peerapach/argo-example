@@ -5,6 +5,7 @@ patchesStrategicMerge:
 - healthcheck_patch.yaml
 - memorylimit_patch.yaml
 - replicas_patch.yaml
+- env_patch.yaml
 namePrefix: production-
 patchesJson6902:
 - target:
@@ -12,6 +13,8 @@ patchesJson6902:
     kind: Namespace
     name: example-prod
   path: namespace_patch.yaml
+commonLabels:
+  env: "production"  
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: example-prod

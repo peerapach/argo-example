@@ -3,16 +3,19 @@ resources:
 - namespace.yaml
 patchesStrategicMerge:
 - replicas_patch.yaml
+- env_patch.yaml
 namePrefix: staging-
 images:
 - name: peerapach/argo-workflow
-  newTag: "01e6529"
+  newTag: 01e6529
 patchesJson6902:
-- target:
-    version: v1
+- path: namespace_patch.yaml
+  target:
     kind: Namespace
     name: example-staging
-  path: namespace_patch.yaml  
+    version: v1
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: example-staging
+commonLabels:
+  env: "staging"
