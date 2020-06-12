@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: app-user
+  labels:
+    app: app-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-user
+  template:
+    metadata:
+      labels:
+        app: app-user
+    spec:
+      containers:
+      - name: app-user
+        image: peerapach/demo-workshop:v1
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 50m
+            memory: 100Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 30            
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 30 
