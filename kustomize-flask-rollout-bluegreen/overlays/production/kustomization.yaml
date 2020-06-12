@@ -24,3 +24,5 @@ patchesJson6902:
     kind: Ingress
     name: app-user-ingress
     version: v1beta1
+commonLabels:
+  env: "production"      
