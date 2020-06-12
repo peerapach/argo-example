@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: app-user
   labels:
@@ -38,3 +38,8 @@ spec:
             port: 5000
           initialDelaySeconds: 10
           periodSeconds: 30 
+  strategy:
+    blueGreen: 
+      activeService: app-user-active
+      previewService: app-user-preview
+      autoPromotionEnabled: false

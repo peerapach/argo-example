@@ -8,8 +8,8 @@ resources:
 vars:
 - name: ENV
   objref:
-    kind: Deployment
+    kind: Rollout
     name: app-user
-    apiVersion: apps/v1
+    apiVersion: argoproj.io/v1alpha1
   fieldref:
     fieldpath: metadata.labels['env']

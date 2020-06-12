@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-user-active
+spec:
+  selector:
+    app: app-user
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-user-preview
+spec:
+  selector:
+    app: app-user
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000    
