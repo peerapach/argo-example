@@ -15,9 +15,9 @@ patchesJson6902:
     name: example-staging
     version: v1
 commonLabels:
-  env: "staging"      
+  env: "staging"  
+  test: 'abc'
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: example-staging
-commonLabels:
-  env: "staging"
+  
