@@ -1,0 +1,4 @@
+- op: remove
+  path: /spec/selector/matchLabels/test
+- op: remove
+  path: /spec/template/metadata/labels/test
