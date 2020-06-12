@@ -16,7 +16,7 @@ namePrefix: staging-
 
 images:
 - name: peerapach/demo-workshop
-  newTag: "5"
+  newTag: "9"
 
 patchesJson6902:
 - path: namespace_patch.yaml
@@ -30,9 +30,23 @@ patchesJson6902:
     kind: Ingress
     name: app-user-ingress
     version: v1beta1
+- target:
+    group: argoproj.io
+    version: v1alpha1
+    kind: Rollout
+    name: app-user
+  path: rm-deploy-common-label-in-selector.yaml
+- target:
+    version: v1
+    kind: Service
+    name: app-user-active
+  path: rm-app-user-active-selector.yaml
+- target:
+    version: v1
+    kind: Service
+    name: app-user-preview
+  path: rm-app-user-active-selector.yaml  
 
 commonLabels:
   env: "staging"     
   test: "false"
-  abc: "test"
-  xyz: "exam"
