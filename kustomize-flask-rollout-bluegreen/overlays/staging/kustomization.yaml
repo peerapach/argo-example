@@ -4,7 +4,7 @@ resources:
 patchesStrategicMerge:
 - replicas_patch.yaml
 - rollout_patch.yaml
-namePrefix: staging-
+#namePrefix: staging-
 images:
 - name: peerapach/demo-workshop
   newTag: "1"

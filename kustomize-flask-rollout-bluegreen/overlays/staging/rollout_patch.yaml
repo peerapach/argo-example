@@ -5,6 +5,6 @@ metadata:
 spec:
   strategy:
     blueGreen: 
-      activeService: staging-app-service-active
-      previewService: staging-app-service-preview
+      activeService: app-service-active
+      previewService: app-service-preview
       autoPromotionEnabled: false
