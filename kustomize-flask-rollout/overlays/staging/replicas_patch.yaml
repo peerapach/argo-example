@@ -3,4 +3,4 @@ kind: Rollout
 metadata:
   name: app-user
 spec:
-  replicas: 2
+  replicas: 5
