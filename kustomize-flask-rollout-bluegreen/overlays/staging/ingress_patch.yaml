@@ -5,4 +5,8 @@
     nginx.ingress.kubernetes.io/configuration-snippet: |
       if ( $http_test ) {
       set $proxy_upstream_name "example-staging-staging-app-user-preview-80";
-      }  
+      }
+
+- op: replace
+  path: /spec/rules/0/host
+  value: staging-app-user.workshop.ezylinux.com

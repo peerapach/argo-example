@@ -9,6 +9,7 @@ resources:
 - namespace.yaml
 patchesStrategicMerge:
 - replicas_patch.yaml
+#- ingress_host_patch.yaml
 namePrefix: staging-
 images:
 - name: peerapach/demo-workshop

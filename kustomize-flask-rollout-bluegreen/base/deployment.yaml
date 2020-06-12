@@ -40,6 +40,6 @@ spec:
           periodSeconds: 30 
   strategy:
     blueGreen: 
-      activeService: app-service-active
-      previewService: app-service-preview
+      activeService: app-user-active
+      previewService: app-user-preview
       autoPromotionEnabled: false

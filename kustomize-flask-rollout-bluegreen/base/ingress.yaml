@@ -10,5 +10,5 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: app-service-active
+          serviceName: app-user-active
           servicePort: 80      

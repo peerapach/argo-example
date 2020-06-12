@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-service-active
+  name: app-user-active
 spec:
   selector:
     app: app-user
@@ -14,7 +14,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-service-preview
+  name: app-user-preview
 spec:
   selector:
     app: app-user
