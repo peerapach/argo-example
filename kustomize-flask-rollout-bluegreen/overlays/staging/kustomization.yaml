@@ -1,13 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+#namespace: example-staging
+
 configurations:
 - rollout-transform.yaml
-
 resources:
 - ../../base
 - namespace.yaml
 patchesStrategicMerge:
 - replicas_patch.yaml
 namePrefix: staging-
-
 images:
 - name: peerapach/demo-workshop
   newTag: "3"
@@ -23,7 +25,3 @@ patchesJson6902:
     kind: Ingress
     name: app-user-ingress
     version: v1beta1
-
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-#namespace: example-staging
