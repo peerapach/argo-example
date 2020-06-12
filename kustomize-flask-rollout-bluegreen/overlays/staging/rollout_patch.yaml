@@ -6,7 +6,6 @@ spec:
   minReadySeconds: 30
   revisionHistoryLimit: 3
   strategy:
-  strategy:
     blueGreen: 
       activeService: app-service-active
       previewService: app-service-preview
