@@ -3,6 +3,7 @@ resources:
 - namespace.yaml
 patchesStrategicMerge:
 - replicas_patch.yaml
+- env_patch.yaml
 namePrefix: staging-
 images:
 - name: peerapach/demo-workshop
@@ -18,3 +19,5 @@ commonLabels:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: example-staging
+commonLabels:
+  env: "staging"

@@ -5,6 +5,7 @@ patchesStrategicMerge:
 - healthcheck_patch.yaml
 - memorylimit_patch.yaml
 - replicas_patch.yaml
+- env_patch.yaml
 namePrefix: production-
 patchesJson6902:
 - target:
