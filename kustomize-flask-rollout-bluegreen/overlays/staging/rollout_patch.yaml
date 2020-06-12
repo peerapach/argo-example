@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: app-user
+spec:
+  minReadySeconds: 30
+  revisionHistoryLimit: 3
+  strategy:
+  strategy:
+    blueGreen: 
+      activeService: app-service-active
+      previewService: app-service-preview
+      autoPromotionEnabled: false

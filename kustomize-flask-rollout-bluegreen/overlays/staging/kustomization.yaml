@@ -14,6 +14,13 @@ patchesJson6902:
     kind: Namespace
     name: example-staging
     version: v1
+- path: ingress_patch.yaml
+  target:
+    group: networking.k8s.io
+    kind: Ingress
+    name: app-user-ingress
+    version: v1beta1
+
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: example-staging
