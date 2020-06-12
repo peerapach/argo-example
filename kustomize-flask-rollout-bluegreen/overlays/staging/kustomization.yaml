@@ -17,7 +17,6 @@ namePrefix: staging-
 images:
 - name: peerapach/demo-workshop
   newTag: "2"
-
 patchesJson6902:
 - path: namespace_patch.yaml
   target:
