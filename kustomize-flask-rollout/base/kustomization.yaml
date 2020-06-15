@@ -4,6 +4,10 @@ resources:
 - service.yaml
 - deployment.yaml
 - ingress.yaml
+- hpa.yaml
+
+configurations:
+- rollout-transform.yaml
 
 vars:
 - name: ENV

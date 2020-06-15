@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+#namespace: example-staging
+
+resources:
+- ../staging-base
+
+patchesStrategicMerge:
+- merge-patches/canary-patch.yaml

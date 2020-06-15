@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: app-user-ingress-active
+  annotations:
+    kubernetes.io/ingress.class: "nginx"  
+spec:
+  rules:
+  - host: $(ENV)-app-user.workshop.ezylinux.com
+    http:
+      paths:
+      - backend:
+          serviceName: app-user-active
+          servicePort: 80      
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: app-user-ingress-preview
+  annotations:
+    kubernetes.io/ingress.class: "nginx"  
+spec:
+  rules:
+  - host: preview-$(ENV)-app-user.workshop.ezylinux.com
+    http:
+      paths:
+      - backend:
+          serviceName: app-user-preview
+          servicePort: 80             

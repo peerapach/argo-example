@@ -2,27 +2,29 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: example-prod
 
-configurations:
-- rollout-transform.yaml
 resources:
 - ../../base
 - namespace.yaml
+
 patchesStrategicMerge:
-- healthcheck_patch.yaml
-- memorylimit_patch.yaml
-- replicas_patch.yaml
+- merge-patches/healthcheck-patch.yaml
+- merge-patches/memorylimit-patch.yaml
+- merge-patches/hpa-patch.yaml
+
 namePrefix: production-
+
 patchesJson6902:
 - target:
     version: v1
     kind: Namespace
     name: example-prod
-  path: namespace_patch.yaml
-- path: ingress_patch.yaml
+  path: patches/namespace-patch.yaml
+- path: patches/ingress-annotations-patch.yaml
   target:
     group: networking.k8s.io
     kind: Ingress
-    name: app-user-ingress
+    name: app-user-ingress-active
     version: v1beta1
+
 commonLabels:
   env: "production"      
