@@ -7,3 +7,6 @@ resources:
 
 patchesStrategicMerge:
 - merge-patches/canary-patch.yaml
+images:
+- name: peerapach/demo-workshop
+  newTag: "1"
