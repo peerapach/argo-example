@@ -3,7 +3,7 @@ kind: Kustomization
 #namespace: example-staging
 
 resources:
-- ../production-base
+- ../base
 
 patchesStrategicMerge:
-- merge-patches/bluegreen-patch.yaml
+- merge-patches/canary-patch.yaml

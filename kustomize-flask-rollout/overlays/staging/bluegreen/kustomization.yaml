@@ -3,7 +3,7 @@ kind: Kustomization
 #namespace: example-staging
 
 resources:
-- ../staging-canary
+- ../canary
 
 patchesStrategicMerge:
 - merge-patches/bluegreen-patch.yaml
