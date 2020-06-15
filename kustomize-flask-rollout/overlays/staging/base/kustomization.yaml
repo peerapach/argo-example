@@ -3,7 +3,7 @@ kind: Kustomization
 #namespace: example-staging
 
 resources:
-- ../../base
+- ../../../base
 - namespace.yaml
 
 namePrefix: staging-

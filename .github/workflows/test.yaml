@@ -16,6 +16,14 @@ jobs:
             kustomize build kustomize-flask/overlays/production | kubeval --strict --ignore-missing-schemas
             echo "Validating staging"
             kustomize build kustomize-flask/overlays/staging | kubeval --strict --ignore-missing-schemas
+            echo "Validating production - bluegreen rollout"
+            kustomize build kustomize-flask-rollout/overlays/production/bluegreen | kubeval --strict --ignore-missing-schemas
+            echo "Validating production - canary rollout"
+            kustomize build kustomize-flask-rollout/overlays/production/canary | kubeval --strict --ignore-missing-schemas
+            echo "Validating staging - bluegreen rollout"
+            kustomize build kustomize-flask-rollout/overlays/staging/bluegreen | kubeval --strict --ignore-missing-schemas
+            echo "Validating staging - canary rollout"
+            kustomize build kustomize-flask-rollout/overlays/staging/canary | kubeval --strict --ignore-missing-schemas
       - name: Policy check
         uses: stefanprodan/kube-tools@v1
         id: policy_check

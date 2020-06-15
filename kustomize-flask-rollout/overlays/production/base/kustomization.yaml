@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: example-prod
 
 resources:
-- ../../base
+- ../../../base
 - namespace.yaml
 
 patchesStrategicMerge:
