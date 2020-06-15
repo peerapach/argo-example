@@ -3,10 +3,11 @@ kind: Kustomization
 #namespace: example-staging
 
 resources:
-- ../canary
+- ../base
 
 patchesStrategicMerge:
 - merge-patches/bluegreen-patch.yaml
+
 images:
 - name: peerapach/demo-workshop
   newTag: "6"

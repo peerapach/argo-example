@@ -5,7 +5,7 @@ metadata:
 spec:
   strategy:
     canary: #Indicates that the rollout should use the Canary strategy
-      maxSurge: "25%"
+      maxSurge: "250%"
       maxUnavailable: 0
       steps:
       - setWeight: 10
