@@ -9,4 +9,4 @@ patchesStrategicMerge:
 - merge-patches/bluegreen-patch.yaml
 images:
 - name: peerapach/demo-workshop
-  newTag: "5"
+  newTag: "6"
