@@ -7,7 +7,7 @@ patchesStrategicMerge:
 namePrefix: staging-
 images:
 - name: peerapach/demo-workshop
-  newTag: green
+  newTag: blue
 patchesJson6902:
 - path: namespace_patch.yaml
   target:
