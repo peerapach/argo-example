@@ -10,4 +10,4 @@ patchesStrategicMerge:
 
 images:
 - name: peerapach/demo-workshop
-  newTag: green
+  newTag: red
