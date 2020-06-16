@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-bluegreen
+  namespace: argocd
+spec:  
+project: default
+source:
+  repoURL: 'git@github.com:peerapach/argo-example.git'
+  path: kustomize-flask-rollout/overlays/staging/bluegreen
+  targetRevision: develop
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: example-staging
