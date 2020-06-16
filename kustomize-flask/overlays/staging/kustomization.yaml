@@ -7,7 +7,7 @@ patchesStrategicMerge:
 namePrefix: staging-
 images:
 - name: peerapach/demo-workshop
-  newTag: "1"
+  newTag: green
 patchesJson6902:
 - path: namespace_patch.yaml
   target:
@@ -15,9 +15,8 @@ patchesJson6902:
     name: example-staging
     version: v1
 commonLabels:
-  env: "staging"  
-  test: 'abc'
+  env: staging
+  test: abc
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: example-staging
-  
