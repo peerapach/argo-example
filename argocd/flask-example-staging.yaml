@@ -6,9 +6,9 @@ metadata:
 spec:  
   project: default
   source:
-    repoURL: 'https://github.com/peerapach/argo-example'
+    repoURL: 'git@github.com/peerapach/argo-example.git'
     path: kustomize-flask/overlays/staging
-    targetRevision: HEAD
+    targetRevision: develop
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: example-staging

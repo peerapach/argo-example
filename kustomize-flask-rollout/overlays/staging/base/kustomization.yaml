@@ -4,16 +4,10 @@ kind: Kustomization
 
 resources:
 - ../../../base
-- namespace.yaml
 
 namePrefix: staging-
 
 patchesJson6902:
-- path: patches/namespace-patch.yaml
-  target:
-    kind: Namespace
-    name: example-staging
-    version: v1
 - path: patches/ingress-annotations-patch.yaml
   target:
     group: networking.k8s.io
@@ -36,6 +30,11 @@ patchesJson6902:
     kind: Service
     name: app-user-preview
     version: v1
+# - path: patches/namespace-patch.yaml
+#   target:
+#     kind: Namespace
+#     name: example-staging
+#     version: v1    
 
 commonLabels:
   env: staging

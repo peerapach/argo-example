@@ -11,4 +11,4 @@ source:
   targetRevision: develop
 destination:
   server: 'https://kubernetes.default.svc'
-  namespace: example-staging
+  namespace: example-staging-bluegreen
