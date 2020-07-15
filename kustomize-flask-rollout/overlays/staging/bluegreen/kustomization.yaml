@@ -5,6 +5,10 @@ kind: Kustomization
 resources:
 - ../base
 
+images:
+- name: peerapach/demo-workshop
+  newTag: 10
+
 patchesStrategicMerge:
 - merge-patches/bluegreen-patch.yaml
 
