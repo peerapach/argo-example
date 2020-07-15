@@ -9,7 +9,7 @@ namePrefix: staging-
 
 images:
 - name: peerapach/demo-workshop
-  newTag: blue
+  newTag: 10
 
 commonLabels:
   env: staging
