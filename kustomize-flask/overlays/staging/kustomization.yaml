@@ -1,6 +1,7 @@
 resources:
 - ../../base
 - sealed-credentials.yaml
+- secrets.yaml
 
 patchesStrategicMerge:
 - replicas_patch.yaml
